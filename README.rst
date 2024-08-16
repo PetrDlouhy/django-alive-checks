@@ -18,45 +18,9 @@ If you want to include support for Elasticsearch, install with:
 
     pip install django-alive-checks[elasticsearch]
 
-Usage
------
 
-### Check Elasticsearch
-
-The ``check_elasticsearch`` function allows you to ping an Elasticsearch server to verify that it is reachable and functioning correctly. This function requires the ``elasticsearch`` package to be installed.
-
-#### Function Signature
-
-.. code-block:: python
-
-    def check_elasticsearch(settings):
-        pass
-
-#### Parameters
-
-- ``settings`` (``dict``): A dictionary of settings that will be passed to the ``Elasticsearch()`` constructor. This allows you to configure the connection to your Elasticsearch server.
-
-#### Example
-
-.. code-block:: python
-
-    from django_alive_checks.checks import check_elasticsearch
-
-    # Example settings for connecting to Elasticsearch
-    elasticsearch_settings = {
-        'hosts': ['localhost:9200'],
-    }
-
-    # Perform the health check
-    try:
-        check_elasticsearch(elasticsearch_settings)
-        print("Elasticsearch is alive!")
-    except Exception as e:
-        print(f"Elasticsearch check failed: {e}")
-
-This function will attempt to ping the Elasticsearch server. If the server is reachable and responds to the ping, the function will complete successfully. If not, it will raise a ``HealthcheckFailure`` exception.
-
-### Integration with django-alive
+Integration with django-alive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To integrate the ``check_elasticsearch`` function with your ``django-alive`` checks, you can add it to your health checks configuration:
 
@@ -64,12 +28,13 @@ To integrate the ``check_elasticsearch`` function with your ``django-alive`` che
 
     # settings.py
 
-    from django_alive_checks.checks import check_elasticsearch
-
     ALIVE_CHECKS = [
-        # Other checks...
-        lambda: check_elasticsearch({'hosts': ['localhost:9200']}),
+        ...
+        ("alive_checks.checks.check_elasticsearch", {"settings": ES_SETTINGS}),
     ]
+
+Where the ``ES_SETTINGS`` contains settings that you pass to ``elsaticsearch.Elasticsearch``.
+
 
 Testing
 -------
