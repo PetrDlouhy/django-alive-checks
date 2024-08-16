@@ -1,5 +1,15 @@
+
+
 django-alive-checks
 ===================
+
+.. image:: https://img.shields.io/pypi/v/django-alive-checks.svg
+   :target: https://pypi.org/project/django-alive-checks/
+   :alt: PyPI version
+
+.. image:: https://github.com/PetrDlouhy/django-alive-checks/workflows/Django%20Tests/badge.svg
+   :target: https://github.com/PetrDlouhy/django-alive-checks/actions
+   :alt: Build status
 
 `django-alive-checks` is a Django application that provides additional health checks for your Django projects. These checks are designed to work with the `django-alive <https://github.com/pinax/django-alive>`_ package but include dependencies that cannot be part of `django-alive` itself.
 
