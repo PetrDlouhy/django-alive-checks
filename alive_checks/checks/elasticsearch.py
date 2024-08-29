@@ -29,7 +29,7 @@ def check_elasticsearch(settings=None):
         settings = {}
 
     try:
-        ping = Elasticsearch(settings).ping()
+        ping = Elasticsearch(**settings).ping()
     except Exception:
         log.exception("Elasticsearch connection failed")
         raise HealthcheckFailure("Elasticsearch exception")
