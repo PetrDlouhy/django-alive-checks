@@ -11,7 +11,7 @@ django-alive-checks
    :target: https://github.com/PetrDlouhy/django-alive-checks/actions
    :alt: Build status
 
-`django-alive-checks` is a Django application that provides additional health checks for your Django projects. These checks are designed to work with the `django-alive <https://github.com/pinax/django-alive>`_ package but include dependencies that cannot be part of `django-alive` itself.
+`django-alive-checks` is a Django application that provides additional health checks for your Django projects. These checks are designed to work with the `django-alive <https://github.com/lincolnloop/django-alive>`_ package but include dependencies that cannot be part of `django-alive` itself.
 
 Installation
 ------------
