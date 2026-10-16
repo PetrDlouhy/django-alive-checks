@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="django-alive-checks",
-    version="0.1",
+    version="0.3",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -16,8 +16,8 @@ setup(
     long_description=open("README.rst").read(),
     long_description_content_type="text/x-rst",
     url="https://github.com/PetrDlouhy/django-alive-checks",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Petr Dlouhý",
+    author_email="petr.dlouhy@email.cz",
     license="MIT",
     python_requires=">=3.10",
     classifiers=[
