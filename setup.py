@@ -19,7 +19,7 @@ setup(
     author="Your Name",
     author_email="your.email@example.com",
     license="MIT",
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: Django",
@@ -31,7 +31,6 @@ setup(
         "Framework :: Django :: 6.1",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
