@@ -1,16 +1,12 @@
 import logging
 
 from django.core.exceptions import ImproperlyConfigured
+from django_alive import HealthcheckFailure
 
 try:
     from elasticsearch import Elasticsearch
 except ImportError:
     Elasticsearch = None
-
-
-class HealthcheckFailure(Exception):
-    pass
-
 
 log = logging.getLogger(__name__)
 
