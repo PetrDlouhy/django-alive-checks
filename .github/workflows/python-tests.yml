@@ -8,16 +8,13 @@ on:
 
 jobs:
   test:
-    # Pinned rather than ubuntu-latest: from 2026-10-19 that label moves to
-    # Ubuntu 26.04, for which actions/python-versions has no Python 3.9 build.
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         # Valid pairs only, per https://docs.djangoproject.com/en/dev/faq/install/
         include:
-          - { python-version: '3.9',  django-version: '4.2.*' }
           - { python-version: '3.10', django-version: '4.2.*' }
           - { python-version: '3.11', django-version: '4.2.*' }
           - { python-version: '3.12', django-version: '4.2.*' }
@@ -61,7 +58,7 @@ jobs:
         python -m unittest discover
 
   lint:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v7
